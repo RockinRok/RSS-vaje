@@ -1,0 +1,98 @@
+// ============================================================
+// style.scss — Snemanje na zahtevo
+// Bootstrap 5 prilagoditve z SCSS spremenljivkami
+// ============================================================
+
+
+// --- 1. Bootstrap spremenljivke (override PRED importom) ---
+
+$primary:   #c8a84b;      // zlata / amber barva za poudarke
+$dark:      #1a1a1a;      // zelo temna navbar in footer
+$light:     #f5f5f5;      // svetlo ozadje
+
+$font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-size-base:   1rem;
+
+$navbar-dark-color:          rgba(255, 255, 255, 0.8);
+$navbar-dark-hover-color:    #c8a84b;
+$navbar-dark-active-color:   #c8a84b;
+
+
+// --- 2. Bootstrap import ---
+// (Samo če komajlaš lokalno z node-sass / dart-sass)
+// @import "node_modules/bootstrap/scss/bootstrap";
+// Če ne, spodaj napiši samo custom CSS ki dopolni Bootstrap CDN:
+
+
+// --- 3. Custom stili ---
+
+// Hero header — temno ozadje s kamero (kot v prototipu)
+.hero-header {
+  background-color: #111;
+  background-image: url('hero-bg.jpg');   // zamenjaj s svojo sliko
+  background-size: cover;
+  background-position: center;
+  min-height: 220px;
+  border-bottom: 3px solid $primary;
+
+  h1 {
+    letter-spacing: 0.12em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  }
+}
+
+// Navbar — rahla senca pod njo
+.navbar {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+
+  .nav-link {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+
+    &:hover,
+    &.active {
+      color: $primary !important;
+    }
+  }
+}
+
+// Sekcija dobrodošli
+section h2 {
+  color: $dark;
+  border-left: 4px solid $primary;
+  padding-left: 0.75rem;
+}
+
+// Gumb galerija
+.btn-outline-secondary {
+  border-color: #999;
+  color: #555;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+
+  &:hover {
+    background-color: $primary;
+    border-color: $primary;
+    color: #fff;
+  }
+}
+
+// Footer
+footer {
+  background-color: $dark !important;
+  font-size: 0.85rem;
+
+  a {
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $primary !important;
+    }
+  }
+}
+
+// Splošno — brez robov pri slikah
+img {
+  max-width: 100%;
+}
