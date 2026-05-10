@@ -1,14 +1,8 @@
-// ============================================================
-// style.scss — Snemanje na zahtevo
-// Bootstrap 5 prilagoditve z SCSS spremenljivkami
-// ============================================================
 
 
-// --- 1. Bootstrap spremenljivke (override PRED importom) ---
-
-$primary:   #c8a84b;      // zlata / amber barva za poudarke
-$dark:      #1a1a1a;      // zelo temna navbar in footer
-$light:     #f5f5f5;      // svetlo ozadje
+$primary:   #c8a84b;     
+$dark:      #1a1a1a;    
+$light:     #f5f5f5;     
 
 $font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $font-size-base:   1rem;
@@ -18,18 +12,15 @@ $navbar-dark-hover-color:    #c8a84b;
 $navbar-dark-active-color:   #c8a84b;
 
 
-// --- 2. Bootstrap import ---
-// (Samo če komajlaš lokalno z node-sass / dart-sass)
-// @import "node_modules/bootstrap/scss/bootstrap";
-// Če ne, spodaj napiši samo custom CSS ki dopolni Bootstrap CDN:
 
 
-// --- 3. Custom stili ---
 
-// Hero header — temno ozadje s kamero (kot v prototipu)
+
+
+
 .hero-header {
   background-color: #111;
-  background-image: url('hero-bg.jpg');   // zamenjaj s svojo sliko
+  background-image: url('hero-bg.jpg');   
   background-size: cover;
   background-position: center;
   min-height: 220px;
@@ -41,7 +32,7 @@ $navbar-dark-active-color:   #c8a84b;
   }
 }
 
-// Navbar — rahla senca pod njo
+
 .navbar {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 
@@ -57,14 +48,14 @@ $navbar-dark-active-color:   #c8a84b;
   }
 }
 
-// Sekcija dobrodošli
+
 section h2 {
   color: $dark;
   border-left: 4px solid $primary;
   padding-left: 0.75rem;
 }
 
-// Gumb galerija
+
 .btn-outline-secondary {
   border-color: #999;
   color: #555;
@@ -92,7 +83,7 @@ footer {
   }
 }
 
-// Splošno — brez robov pri slikah
+
 img {
   max-width: 100%;
 }
