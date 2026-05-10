@@ -1,40 +1,47 @@
 // ============================================================
 // style.scss — Snemanje na zahtevo
+// Bootstrap 5 prilagoditve z SCSS spremenljivkami
 // ============================================================
 
-$siva-svetla:   #c0c0c0;
-$siva-temna:    #6c757d;
-$bela:          #ffffff;
-$temna:         #1a1a1a;
-$sidebar-bg:    #d6d6d6;
 
-// --- menu ---
-.hero-wrapper {
-  background-image: url('slike/background.k.jpg');
+// --- 1. Bootstrap spremenljivke (override PRED importom) ---
+
+$primary:   #c8a84b;      // zlata / amber barva za poudarke
+$dark:      #1a1a1a;      // zelo temna navbar in footer
+$light:     #f5f5f5;      // svetlo ozadje
+
+$font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-size-base:   1rem;
+
+$navbar-dark-color:          rgba(255, 255, 255, 0.8);
+$navbar-dark-hover-color:    #c8a84b;
+$navbar-dark-active-color:   #c8a84b;
+
+
+// --- 2. Bootstrap import ---
+// (Samo če komajlaš lokalno z node-sass / dart-sass)
+// @import "node_modules/bootstrap/scss/bootstrap";
+// Če ne, spodaj napiši samo custom CSS ki dopolni Bootstrap CDN:
+
+
+// --- 3. Custom stili ---
+
+// Hero header — temno ozadje s kamero (kot v prototipu)
+.hero-header {
+  background-color: #111;
+  background-image: url('hero-bg.jpg');   // zamenjaj s svojo sliko
   background-size: cover;
-  background-position: center top;
-  background-color: #222;
+  background-position: center;
+  min-height: 220px;
+  border-bottom: 3px solid $primary;
 
-  
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.45);
-    z-index: 0;
-  }
-
-  .navbar,
-  .hero-title-area {
-    position: relative;
-    z-index: 1;
+  h1 {
+    letter-spacing: 0.12em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
   }
 }
 
-// --- NAVBAR ---
+// Navbar — rahla senca pod njo
 .navbar {
   background-color: transparent !important;
 
@@ -68,41 +75,33 @@ $sidebar-bg:    #d6d6d6;
   h1 {
     font-size: 2.8rem;
     letter-spacing: 0.08em;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
-  }
-}
+    font-weight: 500;
 
-
-.sidebar {
-  background-color: $sidebar-bg;
-  min-height: 300px;
-
-  .sidebar-link {
-    color: #0d6efd;
-    text-decoration: none;
-    font-size: 0.8rem;
-
-    &:hover {
-      text-decoration: underline;
+    &:hover,
+    &.active {
+      color: $primary !important;
     }
   }
 }
 
-// --- VSEBINA  ---
-.vsebina-box {
-  background-color: $bela;
-  border-color: $siva-svetla !important;
-  border-radius: 4px;
+// Sekcija dobrodošli
+section h2 {
+  color: $dark;
+  border-left: 4px solid $primary;
+  padding-left: 0.75rem;
+}
 
-  h2 {
-    font-size: 1.4rem;
-    border-bottom: 1px solid $siva-svetla;
-    padding-bottom: 0.5rem;
-  }
+// Gumb galerija
+.btn-outline-secondary {
+  border-color: #999;
+  color: #555;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
 
-  p {
-    font-size: 0.85rem;
-    line-height: 1.6;
+  &:hover {
+    background-color: $primary;
+    border-color: $primary;
+    color: #fff;
   }
 }
 
@@ -118,11 +117,9 @@ $sidebar-bg:    #d6d6d6;
       text-decoration: underline;
     }
   }
-  
 }
-.menu-okvir {
-  border: 2px solid rgba(255, 255, 255, 0.6);
-  border-radius: 6px;
-  padding: 4px 10px;
-  background-color: rgba(255, 255, 255, 0.15);
+
+// Splošno — brez robov pri slikah
+img {
+  max-width: 100%;
 }
