@@ -138,6 +138,7 @@ $navbar-dark-active-color:#c8a84b;
 // --- SPLOŠNO ---
 img {
   max-width: 100%;
+  display:block;
 }
 
 // --- STORITEV BOX ---
@@ -166,4 +167,20 @@ body {
 
 main {
   flex: 1;
+}
+.galerija-box {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid $siva-svetla;
+
+  img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+  }
+
+  &:hover {
+    border-color: $primary;
+    opacity: 0.9;
+  }
 }
