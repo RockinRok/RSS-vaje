@@ -1,0 +1,186 @@
+
+
+// --- Spremenljivke ---
+$primary:       #c8a84b;
+$dark:          #1a1a1a;
+$light:         #f5f5f5;
+$siva-svetla:   #c0c0c0;
+$siva-temna:    #6c757d;
+$bela:          #ffffff;
+$temna:         #1a1a1a;
+$sidebar-bg:    #d6d6d6;
+
+$font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-size-base:   1rem;
+
+$navbar-dark-color:       rgba(255, 255, 255, 0.8);
+$navbar-dark-hover-color: #c8a84b;
+$navbar-dark-active-color:#c8a84b;
+
+// --- HERO WRAPPER ---
+.hero-wrapper {
+  background-image: url('slike/background.k.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-color: #222;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 0;
+  }
+
+  .navbar,
+  .hero-title-area {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// --- NAVBAR ---
+.navbar {
+  background-color: transparent !important;
+
+  .navbar-brand img {
+    filter: brightness(1.2);
+  }
+
+  .nav-link {
+    color: $bela !important;
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    padding: 0.4rem 1rem;
+    border: 1px solid transparent;
+
+    &:hover {
+      border-color: $bela;
+      border-radius: 4px;
+    }
+  }
+
+  .navbar-toggler {
+    border-color: $bela;
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+  }
+}
+
+// --- MENU OKVIR ---
+.menu-okvir {
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 6px;
+  padding: 4px 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+// --- HERO NASLOV ---
+.hero-title-area {
+  h1 {
+    font-size: 2.8rem;
+    letter-spacing: 0.08em;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+  }
+}
+
+// --- SIDEBAR ---
+.sidebar {
+  background-color: $sidebar-bg;
+  min-height: 300px;
+
+  .sidebar-link {
+    color: #0d6efd;
+    text-decoration: none;
+    font-size: 0.8rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// --- VSEBINA BOX ---
+.vsebina-box {
+  background-color: $bela;
+  border-color: $siva-svetla !important;
+  border-radius: 4px;
+
+  h2 {
+    font-size: 1.4rem;
+    border-bottom: 1px solid $siva-svetla;
+    padding-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+}
+
+// --- FOOTER ---
+.footer-main {
+  background-color: $siva-svetla;
+  font-size: 0.82rem;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// --- SPLOŠNO ---
+img {
+  max-width: 100%;
+  display:block;
+}
+
+// --- STORITEV BOX ---
+.storitev-box {
+  background-color: $bela;
+  border-color: $siva-svetla !important;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: $sidebar-bg;
+  }
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+.galerija-box {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid $siva-svetla;
+
+  img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+  }
+
+  &:hover {
+    border-color: $primary;
+    opacity: 0.9;
+  }
+}
