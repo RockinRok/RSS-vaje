@@ -101,4 +101,21 @@ img {
   max-width: 100%;
 }
 
+.storitev-box {
+  background-color: #ffffff;
+  border-color: #c0c0c0 !important;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.storitev-box:hover {
+  background-color: #d6d6d6;
+}
+
 /*# sourceMappingURL=style.css.map */

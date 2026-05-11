@@ -139,3 +139,21 @@ $navbar-dark-active-color:#c8a84b;
 img {
   max-width: 100%;
 }
+// --- STORITEV BOX ---
+.storitev-box {
+  background-color: $bela;
+  border-color: $siva-svetla !important;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: $sidebar-bg;
+  }
+}
