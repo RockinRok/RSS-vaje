@@ -5,7 +5,7 @@ $user = "root";
 $pass = "superVarnoGeslo";
 $db = "rss_vaje";
 
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = new mysqli($host, $user, "", $db);
 
 if($conn->connect_error){
     die("Povezava ni uspela: " . $conn->connect_error);
