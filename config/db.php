@@ -3,9 +3,9 @@
 $host = "localhost";
 $user = "root";
 $pass = "superVarnoGeslo";
-$db = "rss_vaje";
+$db = "Snemanje na zahtevo";
 
-$conn = new mysqli($host, $user, "", $db);
+$conn = new mysqli($host, $user, $pass, $db);
 
 if($conn->connect_error){
     die("Povezava ni uspela: " . $conn->connect_error);
