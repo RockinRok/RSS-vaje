@@ -1,5 +1,5 @@
 <?php 
-
+/*
 include 'header.php';
 $servername = "localhost";
 $username = "root";  
@@ -13,4 +13,5 @@ try{
     echo "Povezava ni uspela: " . $e->getMessage();
     exit();
 }
+    */  
 ?>
