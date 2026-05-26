@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "superVarnoGeslo";
-$db = "Snemanje na zahtevo";
+$db = "rss_vaje";
 
 $conn = new mysqli($host, $user, $pass, $db);
 
