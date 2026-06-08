@@ -1,0 +1,16 @@
+Za zagon docker strežnika:
+    1. Zaženi docker desktop
+    2. odpri nov terminal v visual studio code
+    3. vpiši "docker compose up -d"
+    4. morajo se izpisat vsi containerji z zelenim napisom na desni strani
+
+Če gre kaj narobe al pa če hočeš resetirat strežnik zaradi spremembe vpiši "docker compose down -v" pa znova "docker compose up -d"
+
+Glavna spletna stran v brskalniku: localhost:8082
+
+Phpmyadmin: localhost:8081
+Phpmyadmin username: root
+Phpmyadmin password: superVarnoGeslo
+
+Php povezava je uspešna stran: localhost:8082/config/db.php
+
