@@ -1,6 +1,6 @@
 <?php
 
-$host = "localhost";
+$host = "db";
 $user = "root";
 $pass = "superVarnoGeslo";
 $db = "rss_vaje";
