@@ -12,4 +12,4 @@ if($conn->connect_error){
 
 }
 
-echo "Povezava na bazo uspešna";
+//echo "Povezava na bazo uspešna";

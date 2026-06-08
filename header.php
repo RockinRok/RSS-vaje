@@ -31,6 +31,7 @@
               <li class="nav-item"><a class="nav-link fw-semibold px-2" href="reference.html">REFERENCE</a></li>
               <li class="nav-item"><a class="nav-link fw-semibold px-2" href="onas.html">O NAS</a></li>
               <li class="nav-item"><a class="nav-link fw-semibold px-2" href="kontakt.php">KONTAKT</a></li>
+              <li class="nav-item"><a class="nav-link fw-semibold px-2 text-danger" href="pregled.php">PREGLED</a></li>
             </ul>
           </div>
         </div>

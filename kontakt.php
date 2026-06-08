@@ -1,10 +1,12 @@
 <?php
 $title = 'Kontakt - Snemanje na zahtevo';
 include 'header.php';
+include 'config/db.php'; 
 
 $sporocilo = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // 1. Prevzem VSEH podatkov iz obrazca
     $ime      = htmlspecialchars($_POST['ime'] ?? '');
     $priimek  = htmlspecialchars($_POST['priimek'] ?? '');
     $email    = htmlspecialchars($_POST['email'] ?? '');
@@ -12,7 +14,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $storitev = htmlspecialchars($_POST['storitev'] ?? '');
     $sporocilo_vsebina = htmlspecialchars($_POST['sporocilo'] ?? '');
 
-    $sporocilo = '<div class="alert alert-success">Sporočilo uspešno poslano!</div>';
+    
+    $sql = "INSERT INTO kontaktna_sporocila (ime, priimek, email, telefon, storitev, sporocilo) VALUES (?, ?, ?, ?, ?, ?)";
+    
+    
+    if ($stmt = $conn->prepare($sql)) {
+        
+        $stmt->bind_param("ssssss", $ime, $priimek, $email, $telefon, $storitev, $sporocilo_vsebina);
+        
+        if ($stmt->execute()) {
+            $sporocilo = '<div class="alert alert-success">Sporočilo uspešno shranjeno v tabelo kontaktna_sporocila!</div>';
+        } else {
+            $sporocilo = '<div class="alert alert-danger">Napaka pri shranjevanju: ' . $stmt->error . '</div>';
+        }
+        $stmt->close();
+    } else {
+        $sporocilo = '<div class="alert alert-danger">SQL napaka strežnika: ' . $conn->error . '</div>';
+    }
 }
 ?>
 
@@ -53,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <form action="kontakt.php" method="POST">
 
                 <div class="mb-3">
-                  <label class="form-label small fw-bold">Ime *</label>
+                   <label class="form-label small fw-bold">Ime *</label>
                   <input type="text" name="ime" class="form-control" required>
                 </div>
 

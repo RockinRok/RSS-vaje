@@ -248,6 +248,18 @@ ALTER TABLE `Storitev_has_Zaposleni`
 ALTER TABLE `Termin_snemanja`
   ADD CONSTRAINT `fk_termin_storitev` FOREIGN KEY (`Storitev_idStoritev`) REFERENCES `Storitev` (`idStoritev`);
 COMMIT;
+CREATE TABLE IF NOT EXISTS kontaktna_sporocila (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ime VARCHAR(45) NOT NULL,
+    priimek VARCHAR(45) NOT NULL,
+    email VARCHAR(45) NOT NULL,
+    telefon VARCHAR(45),
+    storitev VARCHAR(45),
+    sporocilo TEXT,
+    datum_oddaje TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
